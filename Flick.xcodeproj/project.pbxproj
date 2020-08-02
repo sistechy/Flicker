@@ -15,6 +15,7 @@
 		9ABDB33D24CD90D800C41731 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ABDB33C24CD90D800C41731 /* Assets.xcassets */; };
 		9ABDB34024CD90D800C41731 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ABDB33E24CD90D800C41731 /* LaunchScreen.storyboard */; };
 		9ABDB34A24CD987000C41731 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9ABDB34924CD987000C41731 /* GoogleService-Info.plist */; };
+		9ADB97E924D6B962002C98C6 /* SelectedFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADB97E824D6B962002C98C6 /* SelectedFolderViewController.swift */; };
 		DB9FADD9949933DC4BD00BBB /* Pods_Flick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6D57114BA358E21CE73E113 /* Pods_Flick.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		9ABDB33F24CD90D800C41731 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9ABDB34124CD90D800C41731 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9ABDB34924CD987000C41731 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9ADB97E824D6B962002C98C6 /* SelectedFolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedFolderViewController.swift; sourceTree = "<group>"; };
 		D6D57114BA358E21CE73E113 /* Pods_Flick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 				9ABDB33E24CD90D800C41731 /* LaunchScreen.storyboard */,
 				9ABDB34124CD90D800C41731 /* Info.plist */,
 				9A906BBE24CDC644003AF8A4 /* ScannedImagesViewController.swift */,
+				9ADB97E824D6B962002C98C6 /* SelectedFolderViewController.swift */,
 			);
 			path = Flick;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			files = (
 				9ABDB33524CD90D400C41731 /* ViewController.swift in Sources */,
 				9ABDB33124CD90D400C41731 /* AppDelegate.swift in Sources */,
+				9ADB97E924D6B962002C98C6 /* SelectedFolderViewController.swift in Sources */,
 				9ABDB33324CD90D400C41731 /* SceneDelegate.swift in Sources */,
 				9A906BBF24CDC644003AF8A4 /* ScannedImagesViewController.swift in Sources */,
 			);

@@ -48,29 +48,80 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7ix-su-5Xt">
-                                <rect key="frame" x="74" y="322" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Scans" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxD-JU-1Wg">
-                                <rect key="frame" x="151" y="108" width="86" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZRH-cx-Grr">
+                                <rect key="frame" x="0.0" y="61" width="414" height="747"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Scans" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxD-JU-1Wg">
+                                <rect key="frame" x="0.0" y="20" width="414" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ZRH-cx-Grr" firstAttribute="leading" secondItem="U8Q-Zo-H1o" secondAttribute="leading" id="GpI-Zf-fbl"/>
+                            <constraint firstItem="dxD-JU-1Wg" firstAttribute="leading" secondItem="U8Q-Zo-H1o" secondAttribute="leading" id="QJp-su-991"/>
+                            <constraint firstItem="U8Q-Zo-H1o" firstAttribute="bottom" secondItem="ZRH-cx-Grr" secondAttribute="bottom" id="XU6-6k-vrK"/>
+                            <constraint firstItem="U8Q-Zo-H1o" firstAttribute="trailing" secondItem="dxD-JU-1Wg" secondAttribute="trailing" id="gps-ud-gUe"/>
+                            <constraint firstItem="U8Q-Zo-H1o" firstAttribute="trailing" secondItem="ZRH-cx-Grr" secondAttribute="trailing" id="osq-20-nRM"/>
+                            <constraint firstItem="dxD-JU-1Wg" firstAttribute="top" secondItem="U8Q-Zo-H1o" secondAttribute="top" constant="20" id="pM0-CB-ZH2"/>
+                            <constraint firstItem="ZRH-cx-Grr" firstAttribute="top" secondItem="dxD-JU-1Wg" secondAttribute="bottom" constant="20" id="rhY-8i-wSV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="U8Q-Zo-H1o"/>
                     </view>
                     <navigationItem key="navigationItem" id="E4U-fl-Qq4"/>
                     <connections>
-                        <outlet property="scannedImage" destination="7ix-su-5Xt" id="GQR-4w-2AK"/>
+                        <outlet property="folderStackView" destination="ZRH-cx-Grr" id="zEz-or-LQS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pRj-1t-y0R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="971" y="84"/>
+        </scene>
+        <!--Selected Folder View Controller-->
+        <scene sceneID="HBQ-6Q-9tp">
+            <objects>
+                <viewController id="eof-jq-fer" customClass="SelectedFolderViewController" customModule="Flick" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8nf-Rt-vtS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ZT8-tA-3pZ">
+                                <rect key="frame" x="0.0" y="174.5" width="414" height="677.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GKr-29-Ftp">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="677.5"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anf-gT-XeB">
+                                <rect key="frame" x="0.0" y="134" width="414" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ZT8-tA-3pZ" firstAttribute="leading" secondItem="8za-k0-xth" secondAttribute="leading" id="6sb-fU-1AF"/>
+                            <constraint firstItem="8za-k0-xth" firstAttribute="trailing" secondItem="ZT8-tA-3pZ" secondAttribute="trailing" id="7Pk-gT-ncp"/>
+                            <constraint firstItem="anf-gT-XeB" firstAttribute="leading" secondItem="8za-k0-xth" secondAttribute="leading" id="JgZ-Q0-QnN"/>
+                            <constraint firstItem="anf-gT-XeB" firstAttribute="top" secondItem="8za-k0-xth" secondAttribute="top" constant="90" id="MZQ-R0-rcC"/>
+                            <constraint firstItem="ZT8-tA-3pZ" firstAttribute="top" secondItem="anf-gT-XeB" secondAttribute="bottom" constant="20" id="Tpm-Mo-DUG"/>
+                            <constraint firstItem="8za-k0-xth" firstAttribute="bottom" secondItem="ZT8-tA-3pZ" secondAttribute="bottom" constant="10" id="WzF-gl-xCZ"/>
+                            <constraint firstItem="8za-k0-xth" firstAttribute="trailing" secondItem="anf-gT-XeB" secondAttribute="trailing" id="vuv-PH-EdM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8za-k0-xth"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageViewOutlet" destination="GKr-29-Ftp" id="4DC-bc-21y"/>
+                        <outlet property="imagesStackView" destination="ZT8-tA-3pZ" id="AfJ-XU-KlF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vi3-dh-7V1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1695.6521739130435" y="83.705357142857139"/>
         </scene>
     </scenes>
 </document>

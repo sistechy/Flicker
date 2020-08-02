@@ -36,43 +36,55 @@ class ViewController: UIViewController, VNDocumentCameraViewControllerDelegate {
     
     func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
         print("Found \(scan.pageCount)")
-
+        var imgArray: Array<UIImage> = []
         for i in 0 ..< scan.pageCount {
-            let img = scan.imageOfPage(at: i)
-            // ... your code here
-            print(img)
-            print("scans \(i)")
-            uploadImage(image: img)
+            let image = scan.imageOfPage(at: i)
+            imgArray.append(image)
+        }
+        dismiss(animated: true) {
+            self.getFileName(img: imgArray)
         }
     }
 
     
-    func uploadImage(image: UIImage) {
-        let uploadRef = Storage.storage().reference(withPath: "images/one.jpg")
-        guard let imageData = image.jpegData(compressionQuality: 0.75) else {
-            return
-        }
-        let uploadMetadata = StorageMetadata.init()
-        uploadMetadata.contentType = "image/jpeg"
-        uploadRef.putData(imageData, metadata: uploadMetadata) { (downloadMetadata, error) in
-            if let error = error {
-                print("error\(error)")
-            } else {
-                print("success \(String(describing: downloadMetadata))")
+    func uploadImage(imagesArray: Array<UIImage>, folderName: String) {
+        var count = 0
+        let date = Date()
+        for image in imagesArray {
+            let uploadRef = Storage.storage().reference(withPath: "images/\(folderName)/\(date)\(count)")
+            count+=1
+            guard let imageData = image.jpegData(compressionQuality: 0.75) else {
+                return
+            }
+            let uploadMetadata = StorageMetadata.init()
+            uploadMetadata.contentType = "image/jpeg"
+            uploadRef.putData(imageData, metadata: uploadMetadata) { (downloadMetadata, error) in
+                if let error = error {
+                    print("error\(error)")
+                } else {
+                    print("success \(String(describing: downloadMetadata))")
+                }
             }
         }
-            
     }
     
-    func downloadImage() {
-        let downloadRef = Storage.storage().reference(withPath: "images/one.jpg")
-        downloadRef.getData(maxSize: 4 * 1024 * 1024) { (downloadedImage, error) in
-            if let error = error {
-                print("error\(error.localizedDescription)")
-            } else {
-                self.scannedImage.image = UIImage(data: downloadedImage ?? Data())
-            }
+    
+    
+    func getFileName(img: Array<UIImage>) {
+        let alertController = UIAlertController(title: "Save Image", message: "", preferredStyle: .alert)
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter Folder Name"
         }
+        let saveAction = UIAlertAction(title: "Save", style: UIAlertAction.Style.default, handler: { alert -> Void in
+            let firstTextField = alertController.textFields![0] as UITextField
+            self.uploadImage(imagesArray: img, folderName: firstTextField.text ?? "")
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: {
+            (action : UIAlertAction!) -> Void in })
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 
