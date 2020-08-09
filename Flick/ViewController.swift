@@ -51,7 +51,7 @@ class ViewController: UIViewController, VNDocumentCameraViewControllerDelegate {
         var count = 0
         let date = Date()
         for image in imagesArray {
-            let uploadRef = Storage.storage().reference(withPath: "images/\(folderName)/\(date)\(count)")
+            let uploadRef = Storage.storage().reference(withPath: "images/\(folderName)/\(date)\(count).jpg")
             count+=1
             guard let imageData = image.jpegData(compressionQuality: 0.75) else {
                 return
