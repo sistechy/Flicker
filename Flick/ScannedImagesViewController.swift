@@ -20,6 +20,11 @@ getListOfItems()
 //downloadImage()
     }
     
+    @IBAction func ViewScreen(_ sender: UIButton) {
+         let secondViewController = (self.storyboard?.instantiateViewController(withIdentifier: "selectedImage"))! as! SelectedFolderViewController as SelectedFolderViewController
+                self.navigationController?.pushViewController(secondViewController, animated: true)
+        //        }
+    }
     
 
     func getListOfItems() {
@@ -40,13 +45,20 @@ getListOfItems()
 
     }
     
-    @objc func openImagesVC(sender: UIButton) {
+    @IBAction func openImagesVC(_ sender: UIButton!) {
         let imagesVC = SelectedFolderViewController()
         ScannedImagesViewController.self.selectedName = sender.currentTitle ?? ""
         print("sel\(ScannedImagesViewController.selectedName)")
-        self.navigationController?.pushViewController(imagesVC, animated: true)
-//        self.present(imagesVC, animated: true) {
-//            imagesVC.getImage(folderName: self.selectedName)
-//        }
+        //self.navigationController?.popViewController(animated: true)
+//        self.navigationController?.pushViewController(imagesVC, animated: true)
+////        self.present(imagesVC, animated: true) {
+////            imagesVC.getImage(folderName: self.selectedName)
+//
+//        let secondViewController = (self.storyboard?.instantiateViewController(withIdentifier: "selectedImage"))! as! SelectedFolderViewController as SelectedFolderViewController
+//        self.navigationController?.pushViewController(secondViewController, animated: true)
+////        }
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "selectedImage") as! SelectedFolderViewController
+                self.present(newViewController, animated: true, completion: nil)
     }
 }
