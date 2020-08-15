@@ -8,54 +8,46 @@
 
 import UIKit
 import Firebase
+import Photos
 
 class SelectedFolderViewController: UIViewController {
     let storage = Storage.storage()
     @IBOutlet weak var imageViewOutlet: UIImageView!
     @IBOutlet weak var imagesStackView: UIStackView!
+    @IBOutlet weak var collectionViewOutlet: UICollectionView!
     var image = UIImage()
     var selectedFolderName: String?
     var imagePathArray = [String]()
+    var imagesArray = [UIImage]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        getImage(folderName: ScannedImagesViewController.selectedName)
+//        collectionViewOutlet.delegate = self
+//        collectionViewOutlet.dataSource = self
+//        getImage(folderName: ScannedImagesViewController.selectedName)
         
     }
    
     
-    func downloadImage(imagePath: String) -> UIImage? {
+
+    
+}
+
+
+extension SelectedFolderViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        let downloadRef = Storage.storage().reference(withPath:imagePath )
-        downloadRef.getData(maxSize: 4 * 1024 * 1024) { (downloadedImage, error) in
-            if let error = error {
-                print("error\(error.localizedDescription)")
-            } else {
-                
-                let imageView = UIImageView()
-                self.image = UIImage(data: downloadedImage ?? Data())!
-                self.imageViewOutlet.image = self.image
-                print(self.image)
-            }
-        }
-        return image
-        
+//       print("array\(ScannedImagesViewController.imagesArray)")
+//        print("count \(ScannedImagesViewController.imagesArray.count)")
+//        return ScannedImagesViewController.imagesArray.count
+        0
     }
     
-    ///MARK:-to display list of images from a specific folder
-    func getImage(folderName: String) {
-        
-        print(folderName)
-        imagePathArray = []
-        let storageReference: Void = storage.reference().root().child("images/\(folderName)").listAll { (result, error) in
-            print(result.items.description)
-            for images in result.items {
-                let imagePath = images.description.replacingOccurrences(of: "gs://flick-efdc4.appspot.com/", with: "")
-                self.imagePathArray.append(imagePath)
-                print(self.imagePathArray)
-                
-                self.downloadImage(imagePath: imagePath)
-            }
-        }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CollectionViewCell
+        cell?.imageoutlet.image = imagesArray[indexPath.row]
+        return cell ?? UICollectionViewCell()
     }
+    
     
 }
