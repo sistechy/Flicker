@@ -59,6 +59,6 @@ getListOfItems()
 ////        }
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "selectedImage") as! SelectedFolderViewController
-                self.present(newViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(newViewController, animated: true)
     }
 }
