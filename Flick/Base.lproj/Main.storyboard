@@ -42,6 +42,35 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="76.339285714285708"/>
         </scene>
+        <!--Stack View Controller-->
+        <scene sceneID="hap-EF-rCQ">
+            <objects>
+                <viewController storyboardIdentifier="stack" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n7m-in-jOD" customClass="StackViewController" customModule="Flick" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b14-AB-ofw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="cCY-zd-oFK">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2hS-s6-kOs" firstAttribute="trailing" secondItem="cCY-zd-oFK" secondAttribute="trailing" id="BvW-DE-PXC"/>
+                            <constraint firstItem="cCY-zd-oFK" firstAttribute="leading" secondItem="2hS-s6-kOs" secondAttribute="leading" id="HJh-dx-pLd"/>
+                            <constraint firstItem="cCY-zd-oFK" firstAttribute="top" secondItem="2hS-s6-kOs" secondAttribute="top" id="Od2-UE-d8p"/>
+                            <constraint firstItem="2hS-s6-kOs" firstAttribute="bottom" secondItem="cCY-zd-oFK" secondAttribute="bottom" id="Te7-hL-ofj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2hS-s6-kOs"/>
+                    </view>
+                    <connections>
+                        <outlet property="stackoutlet" destination="cCY-zd-oFK" id="XDZ-Uq-k5y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c5y-AR-PhA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2013" y="-627"/>
+        </scene>
         <!--Scanned Images View Controller-->
         <scene sceneID="bcm-3y-rfT">
             <objects>
@@ -59,27 +88,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5S-FT-D2l">
-                                <rect key="frame" x="0.0" y="129" width="414" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="ViewScreen:" destination="9RI-GG-n4N" eventType="touchUpInside" id="BRY-PA-2iC"/>
-                                    <segue destination="Ihn-Dc-ots" kind="show" id="rzD-lb-LdO"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="d5S-FT-D2l" firstAttribute="top" secondItem="dxD-JU-1Wg" secondAttribute="bottom" id="GUH-7U-M7s"/>
+                            <constraint firstItem="ZRH-cx-Grr" firstAttribute="top" secondItem="dxD-JU-1Wg" secondAttribute="bottom" constant="30" id="4fK-5X-zOG"/>
                             <constraint firstItem="ZRH-cx-Grr" firstAttribute="leading" secondItem="U8Q-Zo-H1o" secondAttribute="leading" id="GpI-Zf-fbl"/>
-                            <constraint firstItem="U8Q-Zo-H1o" firstAttribute="trailing" secondItem="d5S-FT-D2l" secondAttribute="trailing" id="LIv-fi-eog"/>
                             <constraint firstItem="dxD-JU-1Wg" firstAttribute="leading" secondItem="U8Q-Zo-H1o" secondAttribute="leading" id="QJp-su-991"/>
                             <constraint firstItem="U8Q-Zo-H1o" firstAttribute="bottom" secondItem="ZRH-cx-Grr" secondAttribute="bottom" id="XU6-6k-vrK"/>
-                            <constraint firstItem="ZRH-cx-Grr" firstAttribute="top" secondItem="d5S-FT-D2l" secondAttribute="bottom" id="Y34-w6-s1I"/>
+                            <constraint firstItem="ZRH-cx-Grr" firstAttribute="bottom" secondItem="U8Q-Zo-H1o" secondAttribute="bottom" id="c5y-7C-zjz"/>
                             <constraint firstItem="U8Q-Zo-H1o" firstAttribute="trailing" secondItem="dxD-JU-1Wg" secondAttribute="trailing" id="gps-ud-gUe"/>
                             <constraint firstItem="U8Q-Zo-H1o" firstAttribute="trailing" secondItem="ZRH-cx-Grr" secondAttribute="trailing" id="osq-20-nRM"/>
                             <constraint firstItem="dxD-JU-1Wg" firstAttribute="top" secondItem="U8Q-Zo-H1o" secondAttribute="top" constant="20" id="pM0-CB-ZH2"/>
-                            <constraint firstItem="d5S-FT-D2l" firstAttribute="leading" secondItem="U8Q-Zo-H1o" secondAttribute="leading" id="rJC-mX-s0q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="U8Q-Zo-H1o"/>
                     </view>
@@ -95,13 +114,13 @@
         <!--Selected Folder View Controller-->
         <scene sceneID="hHv-wx-DuB">
             <objects>
-                <viewController storyboardIdentifier="selectedImage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ihn-Dc-ots" customClass="SelectedFolderViewController" customModule="Flick" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="showImage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ihn-Dc-ots" customClass="SelectedFolderViewController" customModule="Flick" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zsQ-H2-4OW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BWR-GT-JQ4">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DnL-Hf-A2T">
                                     <size key="itemSize" width="385" height="279"/>
@@ -117,8 +136,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="385" height="279"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3iZ-cv-Du3">
-                                                    <rect key="frame" x="0.0" y="0.0" width="385" height="279"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3iZ-cv-Du3">
+                                                    <rect key="frame" x="0.0" y="2.5" width="385" height="274.5"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -134,21 +153,14 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="Ihn-Dc-ots" id="gQS-MY-x3B"/>
-                                    <outlet property="delegate" destination="Ihn-Dc-ots" id="Xiz-gP-dKv"/>
-                                    <outlet property="dragDelegate" destination="Ihn-Dc-ots" id="atQ-mb-zLU"/>
-                                    <outlet property="dropDelegate" destination="Ihn-Dc-ots" id="dzG-dn-MCX"/>
-                                    <outlet property="prefetchDataSource" destination="Ihn-Dc-ots" id="FnM-gK-Klg"/>
-                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="KfO-fr-Bf6" firstAttribute="trailing" secondItem="BWR-GT-JQ4" secondAttribute="trailing" id="PUB-kq-whQ"/>
-                            <constraint firstItem="BWR-GT-JQ4" firstAttribute="top" secondItem="KfO-fr-Bf6" secondAttribute="top" id="SIf-8a-UIH"/>
-                            <constraint firstItem="BWR-GT-JQ4" firstAttribute="leading" secondItem="KfO-fr-Bf6" secondAttribute="leading" id="dhU-aK-Eok"/>
-                            <constraint firstItem="KfO-fr-Bf6" firstAttribute="bottom" secondItem="BWR-GT-JQ4" secondAttribute="bottom" id="rVI-Ox-I9q"/>
+                            <constraint firstAttribute="trailing" secondItem="BWR-GT-JQ4" secondAttribute="trailing" id="PUB-kq-whQ"/>
+                            <constraint firstItem="BWR-GT-JQ4" firstAttribute="top" secondItem="zsQ-H2-4OW" secondAttribute="top" constant="44" id="SIf-8a-UIH"/>
+                            <constraint firstItem="BWR-GT-JQ4" firstAttribute="leading" secondItem="zsQ-H2-4OW" secondAttribute="leading" id="dhU-aK-Eok"/>
+                            <constraint firstAttribute="bottom" secondItem="BWR-GT-JQ4" secondAttribute="bottom" constant="34" id="rVI-Ox-I9q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KfO-fr-Bf6"/>
                     </view>
@@ -180,4 +192,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="76.339285714285708"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pencil" catalog="system" width="128" height="113"/>
+    </resources>
 </document>

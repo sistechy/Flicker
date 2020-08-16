@@ -15,7 +15,7 @@ class ScannedImagesViewController: UIViewController {
     var image = UIImage()
     var selectedFolderName: String?
     var imagePathArray = [String]()
-    var imagesArray = [UIImage]()
+    static var imagesArray = [UIImage]()
     @IBOutlet weak var scannedImage: UIImageView!
     @IBOutlet weak var folderStackView: UIStackView!
     override func viewDidLoad() {
@@ -31,6 +31,9 @@ getListOfItems()
     }
     
 
+    override func viewWillAppear(_ animated: Bool) {
+        ScannedImagesViewController.imagesArray.removeAll()
+    }
     func getListOfItems() {
         let storageReference: Void = storage.reference().root().child("images").listAll { (result, error) in
             var folderArray = [String]()
@@ -48,39 +51,42 @@ getListOfItems()
         }
 
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        
+    }
     
-    @IBAction func openImagesVC(_ sender: UIButton!) {
+    @objc func openImagesVC(_ sender: UIButton!) {
         let imagesVC = SelectedFolderViewController()
         ScannedImagesViewController.self.selectedName = sender.currentTitle ?? ""
         print("sel\(ScannedImagesViewController.selectedName)")
-        getImage(folderName: ScannedImagesViewController.selectedName)
-         print("array\(imagesArray)")
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyBoard.instantiateViewController(withIdentifier: "selectedImage") as! SelectedFolderViewController
-        self.navigationController?.pushViewController(newViewController, animated: true)
+
+        getImage(folderName: ScannedImagesViewController.selectedName) { (result) in
+            print("imagesArray\(result)")
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "stack") as! StackViewController
+            self.navigationController?.pushViewController(newViewController, animated: true)
+        }
+        print("array\(ScannedImagesViewController.imagesArray)")
+        
     }
     
-        func downloadImage(imagePath: String) -> [UIImage] {
+        func downloadImage(imagePath: String) -> UIImage {
             
             let downloadRef = Storage.storage().reference(withPath:imagePath )
             downloadRef.getData(maxSize: 4 * 1024 * 1024) { (downloadedImage, error) in
                 if let error = error {
                     print("error\(error.localizedDescription)")
                 } else {
-                    
-                    let imageView = UIImageView()
-                    let image = UIImage(data: downloadedImage ?? Data())!
-    //                self.imageViewOutlet.image = self.image
-                    self.imagesArray.append(image)
-                    print(self.image)
+                
+                    self.image = UIImage(data: downloadedImage ?? Data())!
                 }
             }
-            return  self.imagesArray
+            return image
             
         }
         
         ///MARK:-to display list of images from a specific folder
-        func getImage(folderName: String) {
+    func getImage(folderName: String, completion: (Array<UIImage>)->()) {
             
             print(folderName)
             imagePathArray = []
@@ -90,9 +96,10 @@ getListOfItems()
                     let imagePath = images.description.replacingOccurrences(of: "gs://flick-efdc4.appspot.com/", with: "")
                     self.imagePathArray.append(imagePath)
                     print(self.imagePathArray)
-                    
-                    self.downloadImage(imagePath: imagePath)
+                    let downloadedImage = self.downloadImage(imagePath: imagePath)
+                    ScannedImagesViewController.imagesArray.append(downloadedImage)
                 }
             }
+        completion(ScannedImagesViewController.imagesArray)
         }
 }

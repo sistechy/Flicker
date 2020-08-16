@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9A906BBF24CDC644003AF8A4 /* ScannedImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A906BBE24CDC644003AF8A4 /* ScannedImagesViewController.swift */; };
-		9AB8C3AE24E8476700F1A6C5 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB8C3AD24E8476700F1A6C5 /* CollectionViewController.swift */; };
 		9AB8C3B024E84A6200F1A6C5 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB8C3AF24E84A6200F1A6C5 /* CollectionViewCell.swift */; };
+		9AB8C3B224E94D1100F1A6C5 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB8C3B124E94D1100F1A6C5 /* StackViewController.swift */; };
 		9ABDB33124CD90D400C41731 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABDB33024CD90D400C41731 /* AppDelegate.swift */; };
 		9ABDB33324CD90D400C41731 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABDB33224CD90D400C41731 /* SceneDelegate.swift */; };
 		9ABDB33524CD90D400C41731 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABDB33424CD90D400C41731 /* ViewController.swift */; };
@@ -25,8 +25,8 @@
 		749D122B22CCBAF4B5C0A3D3 /* Pods-Flick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flick.debug.xcconfig"; path = "Target Support Files/Pods-Flick/Pods-Flick.debug.xcconfig"; sourceTree = "<group>"; };
 		7ED1741B5C2D23640B5073FB /* Pods-Flick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flick.release.xcconfig"; path = "Target Support Files/Pods-Flick/Pods-Flick.release.xcconfig"; sourceTree = "<group>"; };
 		9A906BBE24CDC644003AF8A4 /* ScannedImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedImagesViewController.swift; sourceTree = "<group>"; };
-		9AB8C3AD24E8476700F1A6C5 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		9AB8C3AF24E84A6200F1A6C5 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		9AB8C3B124E94D1100F1A6C5 /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
 		9ABDB32D24CD90D400C41731 /* Flick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ABDB33024CD90D400C41731 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9ABDB33224CD90D400C41731 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,8 +91,8 @@
 				9ABDB34124CD90D800C41731 /* Info.plist */,
 				9A906BBE24CDC644003AF8A4 /* ScannedImagesViewController.swift */,
 				9ADB97E824D6B962002C98C6 /* SelectedFolderViewController.swift */,
-				9AB8C3AD24E8476700F1A6C5 /* CollectionViewController.swift */,
 				9AB8C3AF24E84A6200F1A6C5 /* CollectionViewCell.swift */,
+				9AB8C3B124E94D1100F1A6C5 /* StackViewController.swift */,
 			);
 			path = Flick;
 			sourceTree = "<group>";
@@ -222,10 +222,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AB8C3AE24E8476700F1A6C5 /* CollectionViewController.swift in Sources */,
 				9ABDB33524CD90D400C41731 /* ViewController.swift in Sources */,
 				9ABDB33124CD90D400C41731 /* AppDelegate.swift in Sources */,
 				9AB8C3B024E84A6200F1A6C5 /* CollectionViewCell.swift in Sources */,
+				9AB8C3B224E94D1100F1A6C5 /* StackViewController.swift in Sources */,
 				9ADB97E924D6B962002C98C6 /* SelectedFolderViewController.swift in Sources */,
 				9ABDB33324CD90D400C41731 /* SceneDelegate.swift in Sources */,
 				9A906BBF24CDC644003AF8A4 /* ScannedImagesViewController.swift in Sources */,
