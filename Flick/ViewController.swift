@@ -12,28 +12,25 @@ import Firebase
 import FirebaseStorage
 
 class ViewController: UIViewController, VNDocumentCameraViewControllerDelegate {
-    
+    //For document scan
     let vc = VNDocumentCameraViewController()
     let storage = Storage.storage()
-
+    
     @IBOutlet weak var scannedImage: UIImageView!
     
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-         vc.delegate = self
+        //To set delegate for document view
+        vc.delegate = self
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-    }
-    
     
     @IBAction func scanAction(_ sender: UIButton) {
         present(vc, animated: true)
     }
     
+    //Save button action in document VC
     func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
         print("Found \(scan.pageCount)")
         var imgArray: Array<UIImage> = []
@@ -45,8 +42,9 @@ class ViewController: UIViewController, VNDocumentCameraViewControllerDelegate {
             self.getFileName(img: imgArray)
         }
     }
-
     
+    
+    //To upload scanned images in firebase storage
     func uploadImage(imagesArray: Array<UIImage>, folderName: String) {
         var count = 0
         let date = Date()
@@ -69,7 +67,7 @@ class ViewController: UIViewController, VNDocumentCameraViewControllerDelegate {
     }
     
     
-    
+    // Alert to prompt user for folder name
     func getFileName(img: Array<UIImage>) {
         let alertController = UIAlertController(title: "Save Image", message: "", preferredStyle: .alert)
         alertController.addTextField { (textField : UITextField!) -> Void in

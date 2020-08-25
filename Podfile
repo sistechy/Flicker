@@ -11,5 +11,6 @@ target 'Flick' do
     
     pod 'Firebase/Storage'
     
-    pod "BSImagePicker"  
+    pod 'FirebaseUI/Storage'
+    
 end
