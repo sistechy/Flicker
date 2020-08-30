@@ -7,81 +7,129 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0CA38BA1-F644-48E4-9D66-0096212136BB"
-            shouldBeEnabled = "Yes"
+            uuid = "40B6897F-A939-4F99-9816-C8C574D79D10"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Flick/SelectedFolderViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5379D7F1-4E2C-4EFA-B185-711F8DA8FC69"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flick/SelectedFolderViewController.swift"
+            filePath = "Flick/StackViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
             endingLineNumber = "34"
-            landmarkName = "downloadImage(imageName:)"
+            landmarkName = "getListOfImages(folderName:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "96A5A577-9945-430B-AD5D-F627BD79BB13"
-            shouldBeEnabled = "Yes"
+            uuid = "83ADE745-5E3E-4878-BB72-D8397FAA5E78"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Flick/SelectedFolderViewController.swift"
+            filePath = "Flick/StackViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "getImage(folderName:)"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "getListOfImages(folderName:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "83ADE745-5E3E-4878-BB72-D8397FAA5E78 - c98bec22c3b908d7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.FIRStorageListResult, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Flick.StackViewController.getListOfImages(folderName: Swift.String) -&gt; ()"
+                  moduleName = "Flick"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vidhyac/Desktop/Sistechy%20DOcs/Flick/Flick/StackViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "1612">
+               </Location>
+               <Location
+                  uuid = "83ADE745-5E3E-4878-BB72-D8397FAA5E78 - cd2d9babc98cc908"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (__C.FIRStorageListResult, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Flick.StackViewController.getListOfImages(folderName: Swift.String) -&gt; ()"
+                  moduleName = "Flick"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vidhyac/Desktop/Sistechy%20DOcs/Flick/Flick/StackViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FD700DCA-F067-4C1E-A638-6ECAE366169A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Flick/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "signOut(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EC8ECFC6-D8C0-48BD-B5FB-94640F917F83"
-            shouldBeEnabled = "Yes"
+            uuid = "AD2CDAB6-6D23-40C4-AD9C-249B504DEF31"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Flick/SelectedFolderViewController.swift"
+            filePath = "Flick/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "downloadImage(imageName:)"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "signOut(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EF69B4C9-123A-489D-8038-7419FC3E32B1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Flick/SelectedFolderViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "downloadImage(imageName:)"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AD2CDAB6-6D23-40C4-AD9C-249B504DEF31 - 96b377753a28533b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Flick.ViewController.signOut(__C.UIBarButtonItem) -&gt; ()"
+                  moduleName = "Flick"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vidhyac/Desktop/Sistechy%20DOcs/Flick/Flick/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "352">
+               </Location>
+               <Location
+                  uuid = "AD2CDAB6-6D23-40C4-AD9C-249B504DEF31 - 96b377753a28533b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Flick.ViewController.signOut(__C.UIBarButtonItem) -&gt; ()"
+                  moduleName = "Flick"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vidhyac/Desktop/Sistechy%20DOcs/Flick/Flick/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "824">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A4A725024FC054200E07D26 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A724F24FC054200E07D26 /* SignInViewController.swift */; };
 		9A906BBF24CDC644003AF8A4 /* ScannedImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A906BBE24CDC644003AF8A4 /* ScannedImagesViewController.swift */; };
 		9A96AECB24F2C07400A8E620 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96AECA24F2C07400A8E620 /* DataModel.swift */; };
 		9AB8C3B224E94D1100F1A6C5 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB8C3B124E94D1100F1A6C5 /* StackViewController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		749D122B22CCBAF4B5C0A3D3 /* Pods-Flick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flick.debug.xcconfig"; path = "Target Support Files/Pods-Flick/Pods-Flick.debug.xcconfig"; sourceTree = "<group>"; };
 		7ED1741B5C2D23640B5073FB /* Pods-Flick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flick.release.xcconfig"; path = "Target Support Files/Pods-Flick/Pods-Flick.release.xcconfig"; sourceTree = "<group>"; };
+		9A4A724F24FC054200E07D26 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		9A906BBE24CDC644003AF8A4 /* ScannedImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedImagesViewController.swift; sourceTree = "<group>"; };
 		9A96AECA24F2C07400A8E620 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		9AB8C3B124E94D1100F1A6C5 /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			children = (
 				9ABDB34924CD987000C41731 /* GoogleService-Info.plist */,
 				9ABDB33024CD90D400C41731 /* AppDelegate.swift */,
+				9A4A724F24FC054200E07D26 /* SignInViewController.swift */,
 				9ABDB33224CD90D400C41731 /* SceneDelegate.swift */,
 				9ABDB33424CD90D400C41731 /* ViewController.swift */,
 				9ABDB33624CD90D400C41731 /* Main.storyboard */,
@@ -115,6 +118,7 @@
 				9ABDB32A24CD90D400C41731 /* Frameworks */,
 				9ABDB32B24CD90D400C41731 /* Resources */,
 				A891FB53D270828113C4B0BA /* [CP] Embed Pods Frameworks */,
+				793F0E3F8AB9CB0BEE887356 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -173,6 +177,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		793F0E3F8AB9CB0BEE887356 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Flick/Pods-Flick-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Flick/Pods-Flick-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flick/Pods-Flick-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		93DFBE57B0AFD4A5F5D67BCD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -219,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A4A725024FC054200E07D26 /* SignInViewController.swift in Sources */,
 				9ABDB33524CD90D400C41731 /* ViewController.swift in Sources */,
 				9ABDB33124CD90D400C41731 /* AppDelegate.swift in Sources */,
 				9AB8C3B224E94D1100F1A6C5 /* StackViewController.swift in Sources */,

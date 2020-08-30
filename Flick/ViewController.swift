@@ -84,5 +84,18 @@ class ViewController: UIViewController, VNDocumentCameraViewControllerDelegate {
         
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    @IBAction func signOut(_ sender: UIBarButtonItem) {
+        
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+            print("logout Successfull")
+            navigationController?.popToRootViewController(animated: true)
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
+    }
+    
 }
 

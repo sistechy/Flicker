@@ -12,5 +12,9 @@ target 'Flick' do
     pod 'Firebase/Storage'
     
     pod 'FirebaseUI/Storage'
+  
+    pod 'FirebaseUI/Auth'
+
+    pod 'FirebaseUI/Google'
     
 end
