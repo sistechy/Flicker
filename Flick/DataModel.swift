@@ -15,4 +15,5 @@ struct DataModel {
     static var storageReference = Storage.storage()
     static var imagesArray = [UIImage]()
     static var selectedButtonName = ""
+    static var selectedImage = UIImage()
 }

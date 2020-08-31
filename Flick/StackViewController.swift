@@ -15,11 +15,13 @@ class StackViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+         //MARK:- sending the selected folder name
+        getListOfImages(folderName: DataModel.selectedButtonName)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //MARK:- sending the selected folder name
-        getListOfImages(folderName: DataModel.selectedButtonName)
+       
+        
     }
     
     
@@ -42,6 +44,7 @@ class StackViewController: UIViewController {
             }
         }
     }
+    
     //MARK:-Downloading the image from the path
     func downLoadImagesFromPath(paths: String) {
         // for path in paths {
@@ -52,14 +55,25 @@ class StackViewController: UIViewController {
                 print(error)
             } else {
                 // Data for "images/island.jpg" is returned
+                let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.checkAction))
                 DispatchQueue.main.async {
                     let image = UIImage(data: data!)
                     let imageView = UIImageView()
+                    imageView.isUserInteractionEnabled = true
+                    imageView.addGestureRecognizer(gesture)
                     imageView.image = image
                     self.stackoutlet.addArrangedSubview(imageView)
                 }
                 
             }
         }
+    }
+    @objc func checkAction(sender : UITapGestureRecognizer) {
+        // Do what you want
+        let imageView = sender.view as? UIImageView
+        DataModel.selectedImage = imageView?.image ?? UIImage()
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "SelectedImage") as! SelectedImageViewController
+        self.navigationController?.pushViewController(newViewController, animated: true)
     }
 }

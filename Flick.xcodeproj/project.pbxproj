@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9A4A725024FC054200E07D26 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A724F24FC054200E07D26 /* SignInViewController.swift */; };
+		9A4A725224FD625800E07D26 /* SelectedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A725124FD625800E07D26 /* SelectedImageViewController.swift */; };
 		9A906BBF24CDC644003AF8A4 /* ScannedImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A906BBE24CDC644003AF8A4 /* ScannedImagesViewController.swift */; };
 		9A96AECB24F2C07400A8E620 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96AECA24F2C07400A8E620 /* DataModel.swift */; };
 		9AB8C3B224E94D1100F1A6C5 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB8C3B124E94D1100F1A6C5 /* StackViewController.swift */; };
@@ -25,6 +26,7 @@
 		749D122B22CCBAF4B5C0A3D3 /* Pods-Flick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flick.debug.xcconfig"; path = "Target Support Files/Pods-Flick/Pods-Flick.debug.xcconfig"; sourceTree = "<group>"; };
 		7ED1741B5C2D23640B5073FB /* Pods-Flick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flick.release.xcconfig"; path = "Target Support Files/Pods-Flick/Pods-Flick.release.xcconfig"; sourceTree = "<group>"; };
 		9A4A724F24FC054200E07D26 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		9A4A725124FD625800E07D26 /* SelectedImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedImageViewController.swift; sourceTree = "<group>"; };
 		9A906BBE24CDC644003AF8A4 /* ScannedImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedImagesViewController.swift; sourceTree = "<group>"; };
 		9A96AECA24F2C07400A8E620 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		9AB8C3B124E94D1100F1A6C5 /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				9A906BBE24CDC644003AF8A4 /* ScannedImagesViewController.swift */,
 				9AB8C3B124E94D1100F1A6C5 /* StackViewController.swift */,
 				9A96AECA24F2C07400A8E620 /* DataModel.swift */,
+				9A4A725124FD625800E07D26 /* SelectedImageViewController.swift */,
 			);
 			path = Flick;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				9ABDB33124CD90D400C41731 /* AppDelegate.swift in Sources */,
 				9AB8C3B224E94D1100F1A6C5 /* StackViewController.swift in Sources */,
 				9A96AECB24F2C07400A8E620 /* DataModel.swift in Sources */,
+				9A4A725224FD625800E07D26 /* SelectedImageViewController.swift in Sources */,
 				9ABDB33324CD90D400C41731 /* SceneDelegate.swift in Sources */,
 				9A906BBF24CDC644003AF8A4 /* ScannedImagesViewController.swift in Sources */,
 			);

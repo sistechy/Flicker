@@ -76,6 +76,45 @@
             </objects>
             <point key="canvasLocation" x="2013" y="-627"/>
         </scene>
+        <!--Selected Image View Controller-->
+        <scene sceneID="b0z-oW-hbf">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="duy-WV-HVd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="SelectedImage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kfz-6O-lGX" customClass="SelectedImageViewController" customModule="Flick" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Bx-9E-fAt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gc9-Ch-hWz">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2hI-wx-2v5" firstAttribute="trailing" secondItem="Gc9-Ch-hWz" secondAttribute="trailing" id="NpY-1b-gwR"/>
+                            <constraint firstItem="Gc9-Ch-hWz" firstAttribute="leading" secondItem="2hI-wx-2v5" secondAttribute="leading" id="aLc-OT-lOc"/>
+                            <constraint firstItem="2hI-wx-2v5" firstAttribute="bottom" secondItem="Gc9-Ch-hWz" secondAttribute="bottom" id="fnx-VS-8Gt"/>
+                            <constraint firstItem="Gc9-Ch-hWz" firstAttribute="top" secondItem="2hI-wx-2v5" secondAttribute="top" id="luD-pa-Ykj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2hI-wx-2v5"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XhR-P9-igA">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="paperplane.fill" catalog="system" id="5J7-h6-hid"/>
+                            <barButtonItem title="Item" image="square.and.arrow.down.fill" catalog="system" id="Uoz-qF-eL0">
+                                <connections>
+                                    <action selector="saveAction:" destination="kfz-6O-lGX" id="R7A-Ec-qfd"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="selectedImageView" destination="Gc9-Ch-hWz" id="Bb5-N8-m6Z"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2919" y="-618"/>
+        </scene>
         <!--Scanned Images View Controller-->
         <scene sceneID="bcm-3y-rfT">
             <objects>
@@ -85,10 +124,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZRH-cx-Grr">
-                                <rect key="frame" x="0.0" y="159" width="414" height="703"/>
+                                <rect key="frame" x="0.0" y="211" width="414" height="651"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Scans" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxD-JU-1Wg">
-                                <rect key="frame" x="0.0" y="108" width="414" height="21"/>
+                                <rect key="frame" x="0.0" y="160" width="414" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -110,6 +149,7 @@
                     <navigationItem key="navigationItem" id="E4U-fl-Qq4"/>
                     <connections>
                         <outlet property="folderStackView" destination="ZRH-cx-Grr" id="zEz-or-LQS"/>
+                        <segue destination="kfz-6O-lGX" kind="show" id="olc-3g-6Rm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pRj-1t-y0R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -149,9 +189,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WL3-6Z-4hF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pb9-Kf-HQb" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Eh-Me-mRz">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="7Eh-Me-mRz">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.14117647059999999" green="0.25973930950000002" blue="0.27748942380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -163,6 +204,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="paperplane.fill" catalog="system" width="128" height="121"/>
         <image name="return" catalog="system" width="128" height="101"/>
+        <image name="square.and.arrow.down.fill" catalog="system" width="121" height="128"/>
     </resources>
 </document>
