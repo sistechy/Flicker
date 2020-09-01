@@ -79,7 +79,6 @@
         <!--Selected Image View Controller-->
         <scene sceneID="b0z-oW-hbf">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="duy-WV-HVd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="SelectedImage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kfz-6O-lGX" customClass="SelectedImageViewController" customModule="Flick" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Bx-9E-fAt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -100,7 +99,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="XhR-P9-igA">
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" image="paperplane.fill" catalog="system" id="5J7-h6-hid"/>
+                            <barButtonItem title="Item" image="paperplane.fill" catalog="system" id="5J7-h6-hid">
+                                <connections>
+                                    <action selector="shareAction:" destination="kfz-6O-lGX" id="8Ak-mh-jIl"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem title="Item" image="square.and.arrow.down.fill" catalog="system" id="Uoz-qF-eL0">
                                 <connections>
                                     <action selector="saveAction:" destination="kfz-6O-lGX" id="R7A-Ec-qfd"/>
@@ -112,6 +115,7 @@
                         <outlet property="selectedImageView" destination="Gc9-Ch-hWz" id="Bb5-N8-m6Z"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="duy-WV-HVd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2919" y="-618"/>
         </scene>
@@ -186,7 +190,6 @@
         <!--Navigation Controller-->
         <scene sceneID="inS-k1-6rN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WL3-6Z-4hF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pb9-Kf-HQb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="7Eh-Me-mRz">
@@ -199,6 +202,7 @@
                         <segue destination="E9S-Hc-aUR" kind="relationship" relationship="rootViewController" id="II3-At-3gA"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WL3-6Z-4hF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="185.50724637681162" y="75.669642857142847"/>
         </scene>

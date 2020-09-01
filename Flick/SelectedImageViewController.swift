@@ -9,10 +9,10 @@
 import UIKit
 import Photos
 import PhotosUI
+import PDFKit
 
 class SelectedImageViewController: UIViewController {
 
-    
     @IBOutlet weak var selectedImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +37,32 @@ class SelectedImageViewController: UIViewController {
 //            }
         }
     }
+    
+    @IBAction func shareAction(_ sender: UIBarButtonItem) {
+        guard let docPDF = [DataModel.selectedImage].makePDF() else { return  }
+        let pathURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("\(DataModel.selectedImage).pdf")
+//
+//        let resourceDocPath = NSHomeDirectory().appending("/Documents/yourPDF.pdf")
+//
+//        unlink(resourceDocPath)
+//
+        do {
+            try docPDF.write(to: pathURL)
+        }catch{
+            print("Error while writting")
+        }
+//
+//        print(resourceDocPath)
+        savePDF(pdf: docPDF)
+    }
+    
+    @available(iOS 11.0, *)
+    func savePDF(pdf: PDFDocument) {
+        guard let documentData = pdf.dataRepresentation() else { return }
+        let activityController = UIActivityViewController(activityItems: [documentData], applicationActivities: nil)
+        self.present(activityController, animated: true, completion: nil)
+    }
+    
     
     
     
@@ -90,4 +116,72 @@ class SelectedImageViewController: UIViewController {
             }
         }
     }
+    func savePdf(urlString:String, fileName:String) {
+            DispatchQueue.main.async {
+                let url = URL(string: urlString)
+                let pdfData = try? Data.init(contentsOf: url!)
+                let resourceDocPath = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).last! as URL
+                let pdfNameFromUrl = "YourAppName-\(fileName).pdf"
+                let actualPath = resourceDocPath.appendingPathComponent(pdfNameFromUrl)
+                do {
+                    try pdfData?.write(to: actualPath, options: .atomic)
+                    print("pdf successfully saved!")
+                } catch {
+                    print("Pdf could not be saved")
+                }
+            }
+        }
+
+        func showSavedPdf(url:String, fileName:String) {
+            if #available(iOS 10.0, *) {
+                do {
+                    let docURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+                    let contents = try FileManager.default.contentsOfDirectory(at: docURL, includingPropertiesForKeys: [.fileResourceTypeKey], options: .skipsHiddenFiles)
+                    for url in contents {
+                        if url.description.contains("\(fileName).pdf") {
+                           // its your file! do what you want with it!
+
+                    }
+                }
+            } catch {
+                print("could not locate pdf file !!!!!!!")
+            }
+        }
+    }
+
+    // check to avoid saving a file multiple times
+    func pdfFileAlreadySaved(url:String, fileName:String)-> Bool {
+        var status = false
+        if #available(iOS 10.0, *) {
+            do {
+                let docURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+                let contents = try FileManager.default.contentsOfDirectory(at: docURL, includingPropertiesForKeys: [.fileResourceTypeKey], options: .skipsHiddenFiles)
+                for url in contents {
+                    if url.description.contains("YourAppName-\(fileName).pdf") {
+                        status = true
+                    }
+                }
+            } catch {
+                print("could not locate pdf file !!!!!!!")
+            }
+        }
+        return status
+    }
+
 }
+
+
+extension Array where Element: UIImage {
+
+      func makePDF()-> PDFDocument? {
+        let pdfDocument = PDFDocument()
+        for (index,image) in self.enumerated() {
+            let pdfPage = PDFPage(image: image)
+            pdfDocument.insert(pdfPage!, at: index)
+        }
+        return pdfDocument
+    }
+}
+
+
+
