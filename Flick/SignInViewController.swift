@@ -9,12 +9,16 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import FirebaseUI
+import AuthenticationServices
 
-class SignInViewController: UIViewController, GIDSignInDelegate {
+class SignInViewController: UIViewController, GIDSignInDelegate, FUIAuthDelegate {
     
     //Google Sign In button
     @IBOutlet weak var signInButton: GIDSignInButton!
-    
+    let provider = ASAuthorizationAppleIDProvider()
+    var request: ASAuthorizationRequest! = nil
+    var controller: ASAuthorizationController! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,6 +26,8 @@ class SignInViewController: UIViewController, GIDSignInDelegate {
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance().signIn()
         GIDSignIn.sharedInstance().delegate = self
+        request = provider.createRequest()
+        controller = ASAuthorizationController(authorizationRequests: [request])
     }
     
     
@@ -39,7 +45,7 @@ class SignInViewController: UIViewController, GIDSignInDelegate {
             if let error = error {
                 print(error.localizedDescription)
             } else {
-                print("Login Successful.")
+                print("Login Successful.\(authResult?.user.uid)")
                 //This is where you should add the functionality of successful login
                 //i.e. dismissing this view or push the home view controller etc
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -50,4 +56,40 @@ class SignInViewController: UIViewController, GIDSignInDelegate {
     }
     
     
+    @IBAction func appleSignInAction(_ sender: UIButton) {
+        if let authUI = FUIAuth.defaultAuthUI() {
+            authUI.providers = [FUIOAuth.appleAuthProvider()]
+            authUI.delegate = self
+            let authViewController = authUI.authViewController()
+            self.present(authViewController, animated: true, completion: nil)
+        }
+    }
+    
+    func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
+        print("authData\(authDataResult?.credential)")
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "Home") as? ViewController
+        self.navigationController?.pushViewController(newViewController ?? UIViewController(), animated: true)
+//        if let user = authDataResult?.user {
+//            print("Successs \(user.uid) And \(user.email)")
+//            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//            let newViewController = storyBoard.instantiateViewController(withIdentifier: "Home") as? ViewController
+//            self.navigationController?.pushViewController(newViewController ?? UIViewController(), animated: true)
+//        }
+    }
+    
+    func getCredentialState(forUserID userID: String,
+                            completion: @escaping (ASAuthorizationAppleIDProvider.CredentialState, Error?) -> Void){
+        print(userID)
+//        let user = authorization.credential.user
+//        provider.getCredentialState(forUserID: user) { state, error in
+//            // Check for error and examine the state.
+//        }
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        print(authorization.credential)
+       
+        }
+
 }

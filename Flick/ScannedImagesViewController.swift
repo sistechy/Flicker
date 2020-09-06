@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseStorage
+import FirebaseUI
 class ScannedImagesViewController: UIViewController {
     static var selectedName = String()
     let storage = Storage.storage()
@@ -25,23 +26,25 @@ class ScannedImagesViewController: UIViewController {
     
     //To get list of folders under images folder and create buttons to represent it
     func getListOfItems() {
-        let storageReference: Void = storage.reference().root().child("images").listAll { (result, error) in
-            var folderArray = [String]()
+        let userID : String = (Auth.auth().currentUser?.uid)!
+        let storageReference: Void = storage.reference().root().child("\(userID)").listAll { (result, error) in
             for prefix in result.prefixes {
-                let folderName = prefix.description.replacingOccurrences(of: "gs://flick-efdc4.appspot.com/images/", with: "", options: .caseInsensitive)
-                folderArray.append(folderName)
-                print(folderArray)
-                let button = UIButton()
-                print("folders\(folderName)")
-                button.setTitle(folderName, for: .normal)
-                button.backgroundColor = .blue
-                button.addTarget(self, action: #selector(self.openImagesVC), for: .touchUpInside)
-                self.folderStackView.addArrangedSubview(button)
+                let userID : String = (Auth.auth().currentUser?.uid)!
+                let folderName = prefix.description.replacingOccurrences(of: "gs://flick-efdc4.appspot.com/\(userID)/", with: "", options: .caseInsensitive)
+                self.createButton(folderName: folderName)
             }
         }
         
     }
     
+    func createButton(folderName: String) {
+        let button = UIButton()
+        print("folders\(folderName)")
+        button.setTitle(folderName, for: .normal)
+        button.backgroundColor = .blue
+        button.addTarget(self, action: #selector(self.openImagesVC), for: .touchUpInside)
+        self.folderStackView.addArrangedSubview(button)
+    }
     //button action to view the images
     @objc func openImagesVC(_ sender: UIButton!) {
         ScannedImagesViewController.self.selectedName = sender.currentTitle ?? ""

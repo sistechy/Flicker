@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseUI
 
 class StackViewController: UIViewController {
     @IBOutlet weak var stackoutlet: UIStackView!
@@ -29,7 +30,8 @@ class StackViewController: UIViewController {
     func getListOfImages(folderName: String){
         print("foldeer name \(folderName)")
         // Create a reference to the file you want to download
-        let imageRef = DataModel.storageReference.reference(withPath: "images/\(folderName)")
+        let userID : String = (Auth.auth().currentUser?.uid)!
+        let imageRef = DataModel.storageReference.reference(withPath: "\(userID)/\(folderName)")
         imageRef.listAll { (imagelist, error) in
             if let error = error {
                 // Uh-oh, an error occurred!

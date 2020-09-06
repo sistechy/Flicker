@@ -10,6 +10,8 @@ import UIKit
 import VisionKit
 import Firebase
 import FirebaseStorage
+import FirebaseUI
+import FirebaseAuth
 
 class ViewController: UIViewController, VNDocumentCameraViewControllerDelegate {
     //For document scan
@@ -49,7 +51,8 @@ class ViewController: UIViewController, VNDocumentCameraViewControllerDelegate {
         var count = 0
         let date = Date()
         for image in imagesArray {
-            let uploadRef = Storage.storage().reference(withPath: "images/\(folderName)/\(date)\(count).jpg")
+            let userID : String = (Auth.auth().currentUser?.uid)!
+            let uploadRef = Storage.storage().reference(withPath: "\(userID)/\(folderName)/\(date)\(count).jpg")
             count+=1
             guard let imageData = image.jpegData(compressionQuality: 0.75) else {
                 return

@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseStorage
+import FirebaseUI
 
 struct DataModel {
     static var imagePathArray = [String]()
@@ -16,4 +17,5 @@ struct DataModel {
     static var imagesArray = [UIImage]()
     static var selectedButtonName = ""
     static var selectedImage = UIImage()
+    static var userID = (Auth.auth().currentUser?.uid)!
 }

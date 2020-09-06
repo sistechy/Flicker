@@ -17,4 +17,6 @@ target 'Flick' do
 
     pod 'FirebaseUI/Google'
     
+    pod 'FirebaseUI/OAuth'
+   
 end
