@@ -9,7 +9,8 @@
 import UIKit
 import FirebaseUI
 
-class StackViewController: UIViewController {
+class StackViewController: UIViewController, ActivityIndicatorPresenter {
+    var activityIndicator = UIActivityIndicatorView()
     @IBOutlet weak var stackoutlet: UIStackView!
     @IBOutlet weak var imageViewOutlet: UIImageView!
     
@@ -17,14 +18,9 @@ class StackViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
          //MARK:- sending the selected folder name
+        showActivityIndicator()
         getListOfImages(folderName: DataModel.selectedButtonName)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-       
-        
-    }
-    
     
     //MARK:-To get list of image paths under selected folder
     func getListOfImages(folderName: String){
@@ -43,6 +39,9 @@ class StackViewController: UIViewController {
                         self.downLoadImagesFromPath(paths: imagePath)
                     }
                 }
+            }
+            if error == nil {
+                self.hideActivityIndicator()
             }
         }
     }

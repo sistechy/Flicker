@@ -11,8 +11,13 @@ import Firebase
 import GoogleSignIn
 import FirebaseUI
 import AuthenticationServices
+import CryptoKit
 
-class SignInViewController: UIViewController, GIDSignInDelegate, FUIAuthDelegate {
+class SignInViewController: UIViewController, GIDSignInDelegate, FUIAuthDelegate, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window!
+    }
+    
     
     //Google Sign In button
     @IBOutlet weak var signInButton: GIDSignInButton!
