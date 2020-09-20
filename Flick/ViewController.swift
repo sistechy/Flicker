@@ -19,13 +19,21 @@ class ViewController: UIViewController, VNDocumentCameraViewControllerDelegate {
     let storage = Storage.storage()
     
     @IBOutlet weak var scannedImage: UIImageView!
+    @IBOutlet weak var scanButton: UIButton!
+    @IBOutlet weak var viewScanButton: UIButton!
     
+    @IBOutlet weak var GreetLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //To set delegate for document view
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        self.navigationItem.setHidesBackButton(true, animated: true)
         vc.delegate = self
+        GreetLabel.text = "Hi,\n\((Auth.auth().currentUser?.displayName)!)"
+        scanButton.layer.cornerRadius =  20
+        viewScanButton.layer.cornerRadius = 20
     }
     
     @IBAction func scanAction(_ sender: UIButton) {
@@ -45,6 +53,11 @@ class ViewController: UIViewController, VNDocumentCameraViewControllerDelegate {
         }
     }
     
+    
+    func documentCameraViewControllerDidCancel(_ controller: VNDocumentCameraViewController) {
+        // You are responsible for dismissing the controller.
+        controller.dismiss(animated: true)
+    }
     
     //To upload scanned images in firebase storage
     func uploadImage(imagesArray: Array<UIImage>, folderName: String) {
@@ -95,6 +108,7 @@ class ViewController: UIViewController, VNDocumentCameraViewControllerDelegate {
           try firebaseAuth.signOut()
             print("logout Successfull")
             navigationController?.popToRootViewController(animated: true)
+            UserDefaults.standard.set(false, forKey: "isLoggedIn")
         } catch let signOutError as NSError {
           print ("Error signing out: %@", signOutError)
         }

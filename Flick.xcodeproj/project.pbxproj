@@ -12,6 +12,7 @@
 		9A4A725224FD625800E07D26 /* SelectedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A725124FD625800E07D26 /* SelectedImageViewController.swift */; };
 		9A906BBF24CDC644003AF8A4 /* ScannedImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A906BBE24CDC644003AF8A4 /* ScannedImagesViewController.swift */; };
 		9A96AECB24F2C07400A8E620 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96AECA24F2C07400A8E620 /* DataModel.swift */; };
+		9AA6FDC72517C9A9005D017A /* Sacramento-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9AA6FDC62517C9A9005D017A /* Sacramento-Regular.ttf */; };
 		9AB8C3B224E94D1100F1A6C5 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB8C3B124E94D1100F1A6C5 /* StackViewController.swift */; };
 		9ABDB33124CD90D400C41731 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABDB33024CD90D400C41731 /* AppDelegate.swift */; };
 		9ABDB33324CD90D400C41731 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABDB33224CD90D400C41731 /* SceneDelegate.swift */; };
@@ -31,6 +32,7 @@
 		9A4A725124FD625800E07D26 /* SelectedImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedImageViewController.swift; sourceTree = "<group>"; };
 		9A906BBE24CDC644003AF8A4 /* ScannedImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedImagesViewController.swift; sourceTree = "<group>"; };
 		9A96AECA24F2C07400A8E620 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		9AA6FDC62517C9A9005D017A /* Sacramento-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sacramento-Regular.ttf"; sourceTree = "<group>"; };
 		9AB8C3B124E94D1100F1A6C5 /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
 		9ABDB32D24CD90D400C41731 /* Flick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ABDB33024CD90D400C41731 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 				D6D57114BA358E21CE73E113 /* Pods_Flick.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9AA6FDC82517CA4E005D017A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9AA6FDC62517C9A9005D017A /* Sacramento-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		9ABDB32424CD90D400C41731 = {
@@ -101,6 +111,7 @@
 				9A96AECA24F2C07400A8E620 /* DataModel.swift */,
 				9A4A725124FD625800E07D26 /* SelectedImageViewController.swift */,
 				9A05FE77250BE7F90043360A /* Utility.swift */,
+				9AA6FDC82517CA4E005D017A /* Fonts */,
 			);
 			path = Flick;
 			sourceTree = "<group>";
@@ -179,6 +190,7 @@
 				9ABDB34A24CD987000C41731 /* GoogleService-Info.plist in Resources */,
 				9ABDB33D24CD90D800C41731 /* Assets.xcassets in Resources */,
 				9ABDB33824CD90D400C41731 /* Main.storyboard in Resources */,
+				9AA6FDC72517C9A9005D017A /* Sacramento-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

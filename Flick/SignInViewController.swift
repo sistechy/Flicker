@@ -26,7 +26,9 @@ class SignInViewController: UIViewController, GIDSignInDelegate, FUIAuthDelegate
     var controller: ASAuthorizationController! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if UserDefaults.standard.bool(forKey: "isLoggedIn") {
+            navigateToHomePage()
+        }
         // Do any additional setup after loading the view.
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance().signIn()
@@ -53,9 +55,8 @@ class SignInViewController: UIViewController, GIDSignInDelegate, FUIAuthDelegate
                 print("Login Successful.\(authResult?.user.uid)")
                 //This is where you should add the functionality of successful login
                 //i.e. dismissing this view or push the home view controller etc
-                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let newViewController = storyBoard.instantiateViewController(withIdentifier: "Home") as? ViewController
-                self.navigationController?.pushViewController(newViewController ?? UIViewController(), animated: true)
+                UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                self.navigateToHomePage()
             }
         }
     }
@@ -96,5 +97,11 @@ class SignInViewController: UIViewController, GIDSignInDelegate, FUIAuthDelegate
         print(authorization.credential)
        
         }
+    
+    func navigateToHomePage() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let newViewController = storyBoard.instantiateViewController(withIdentifier: "Home") as? ViewController else { return }
+        self.navigationController?.show(newViewController, sender: self)
+    }
 
 }

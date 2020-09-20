@@ -6,6 +6,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Sacramento-Regular.ttf">
+            <string>Sacramento-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -15,24 +20,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2h3-oa-og3">
-                                <rect key="frame" x="190" y="302" width="35" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Scan"/>
-                                <connections>
-                                    <action selector="scanAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fxp-zd-9Ax"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsS-0C-VKc">
-                                <rect key="frame" x="171" y="496" width="72" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="View Scan"/>
-                                <connections>
-                                    <segue destination="9RI-GG-n4N" kind="show" id="lL4-ze-NHE"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BOd-Sw-7cH">
+                                <rect key="frame" x="50" y="732" width="314" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2h3-oa-og3">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="50"/>
+                                        <color key="backgroundColor" red="0.037584070470000001" green="0.22572305079999999" blue="0.80819717639999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="rcK-6F-9vs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="tintColor" red="0.036466479422350498" green="0.21901100341363777" blue="0.78416481598984777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Scan">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="semibold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="scanAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fxp-zd-9Ax"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsS-0C-VKc">
+                                        <rect key="frame" x="0.0" y="60" width="314" height="50"/>
+                                        <color key="backgroundColor" red="0.037584070470000001" green="0.22572305079999999" blue="0.80819717639999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="wbH-La-5pU"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.036466479420000003" green="0.21901100339999999" blue="0.78416481599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="View Documents">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="9RI-GG-n4N" kind="show" id="lL4-ze-NHE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nma-LB-Zzb">
+                                <rect key="frame" x="50" y="44" width="364" height="688"/>
+                                <fontDescription key="fontDescription" name="Sacramento-Regular" family="Sacramento" pointSize="50"/>
+                                <color key="textColor" red="0.036466479420000003" green="0.21901100339999999" blue="0.78416481599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BOd-Sw-7cH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="3kB-Dx-3ix"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BOd-Sw-7cH" secondAttribute="bottom" constant="20" id="DiI-fb-KZ1"/>
+                            <constraint firstItem="BOd-Sw-7cH" firstAttribute="top" secondItem="nma-LB-Zzb" secondAttribute="bottom" id="M5n-AL-l6A"/>
+                            <constraint firstItem="nma-LB-Zzb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="SKf-XG-TbD"/>
+                            <constraint firstItem="nma-LB-Zzb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WbE-N6-4hT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BOd-Sw-7cH" secondAttribute="trailing" constant="50" id="bIg-If-VPp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nma-LB-Zzb" secondAttribute="trailing" id="dSY-Qu-8ql"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="97V-cU-gpV">
@@ -42,6 +81,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="GreetLabel" destination="nma-LB-Zzb" id="FFa-Ku-dzS"/>
+                        <outlet property="scanButton" destination="2h3-oa-og3" id="lJT-sK-pIb"/>
+                        <outlet property="viewScanButton" destination="tsS-0C-VKc" id="yvb-aS-s5s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,11 +125,11 @@
             <objects>
                 <viewController storyboardIdentifier="SelectedImage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kfz-6O-lGX" customClass="SelectedImageViewController" customModule="Flick" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Bx-9E-fAt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gc9-Ch-hWz">
-                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -124,16 +168,16 @@
             <objects>
                 <viewController id="9RI-GG-n4N" customClass="ScannedImagesViewController" customModule="Flick" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8kl-po-F8K">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZRH-cx-Grr">
-                                <rect key="frame" x="0.0" y="211" width="414" height="651"/>
+                                <rect key="frame" x="0.0" y="123" width="414" height="665"/>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Scans" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxD-JU-1Wg">
-                                <rect key="frame" x="0.0" y="160" width="414" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Documents" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxD-JU-1Wg">
+                                <rect key="frame" x="0.0" y="20" width="414" height="73"/>
+                                <fontDescription key="fontDescription" name="Sacramento-Regular" family="Sacramento" pointSize="50"/>
+                                <color key="textColor" red="0.036466479420000003" green="0.21901100339999999" blue="0.78416481599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -142,8 +186,7 @@
                             <constraint firstItem="ZRH-cx-Grr" firstAttribute="top" secondItem="dxD-JU-1Wg" secondAttribute="bottom" constant="30" id="4fK-5X-zOG"/>
                             <constraint firstItem="ZRH-cx-Grr" firstAttribute="leading" secondItem="U8Q-Zo-H1o" secondAttribute="leading" id="GpI-Zf-fbl"/>
                             <constraint firstItem="dxD-JU-1Wg" firstAttribute="leading" secondItem="U8Q-Zo-H1o" secondAttribute="leading" id="QJp-su-991"/>
-                            <constraint firstItem="U8Q-Zo-H1o" firstAttribute="bottom" secondItem="ZRH-cx-Grr" secondAttribute="bottom" id="XU6-6k-vrK"/>
-                            <constraint firstItem="ZRH-cx-Grr" firstAttribute="bottom" secondItem="U8Q-Zo-H1o" secondAttribute="bottom" id="c5y-7C-zjz"/>
+                            <constraint firstItem="U8Q-Zo-H1o" firstAttribute="bottom" secondItem="ZRH-cx-Grr" secondAttribute="bottom" constant="20" id="XU6-6k-vrK"/>
                             <constraint firstItem="U8Q-Zo-H1o" firstAttribute="trailing" secondItem="dxD-JU-1Wg" secondAttribute="trailing" id="gps-ud-gUe"/>
                             <constraint firstItem="U8Q-Zo-H1o" firstAttribute="trailing" secondItem="ZRH-cx-Grr" secondAttribute="trailing" id="osq-20-nRM"/>
                             <constraint firstItem="dxD-JU-1Wg" firstAttribute="top" secondItem="U8Q-Zo-H1o" secondAttribute="top" constant="20" id="pM0-CB-ZH2"/>
@@ -173,14 +216,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3DB-V3-iJ2">
-                                <rect key="frame" x="162" y="512" width="91" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Apple Sign In"/>
-                                <connections>
-                                    <action selector="appleSignInAction:" destination="E9S-Hc-aUR" eventType="touchUpInside" id="dwy-wM-yKl"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="1ja-VT-uuw"/>
@@ -188,7 +223,7 @@
                     <navigationItem key="navigationItem" id="IC9-O9-cL0"/>
                     <connections>
                         <outlet property="signInButton" destination="NZn-yK-HHT" id="cwf-P4-DhD"/>
-                        <segue destination="BYZ-38-t0r" kind="show" id="OhA-eg-RUf"/>
+                        <segue destination="BYZ-38-t0r" kind="custom" id="nxH-c8-TvZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5tz-Yg-YEY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -203,7 +238,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="7Eh-Me-mRz">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.14117647059999999" green="0.25973930950000002" blue="0.27748942380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.036466479420000003" green="0.21901100339999999" blue="0.78416481599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

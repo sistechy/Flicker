@@ -18,4 +18,5 @@ struct DataModel {
     static var selectedButtonName = ""
     static var selectedImage = UIImage()
     static var userID = (Auth.auth().currentUser?.uid)!
+    static var displayName = (Auth.auth().currentUser?.displayName)!
 }

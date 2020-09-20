@@ -58,6 +58,9 @@ class ScannedImagesViewController: UIViewController, ActivityIndicatorPresenter 
         print("folders\(folderName)")
         button.setTitle(folderName, for: .normal)
         button.backgroundColor = .blue
+        button.addConstraint(button.heightAnchor.constraint(equalToConstant: 50))
+        button.backgroundColor = UIColor(red: 0, green: 74, blue: 173, alpha: 0.5)
+        button.layer.cornerRadius =  20
         button.addTarget(self, action: #selector(self.openImagesVC), for: .touchUpInside)
         self.folderStackView.addArrangedSubview(button)
     }
