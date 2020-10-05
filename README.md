@@ -15,7 +15,7 @@ Features:
 
 ● Save the documents in cloud and local
 
-● Convert the documents into pdf
+● Convert the documents to pdf
 
 Technical Specifications:
 1. IDE: Xcode 11.5
