@@ -6,10 +6,15 @@ An IOS application used to scan, edit and save documents in both cloud and local
 Features:
 
 ● Firebase Authentication
+
 ● Easily edit with your scans after you have scanned them
+
 ● Automatically detects the documents
+
 ● Enhance the scans with black-and-white post-processing
+
 ● Save the documents in cloud and local
+
 ● Convert the documents into pdf
 
 Technical Specifications:
