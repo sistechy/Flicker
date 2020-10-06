@@ -10,6 +10,9 @@
 		9A05FE78250BE7F90043360A /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A05FE77250BE7F90043360A /* Utility.swift */; };
 		9A4A725024FC054200E07D26 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A724F24FC054200E07D26 /* SignInViewController.swift */; };
 		9A4A725224FD625800E07D26 /* SelectedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4A725124FD625800E07D26 /* SelectedImageViewController.swift */; };
+		9A68555B252CE74F00C41D9A /* SaveAction.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9A685558252CE74E00C41D9A /* SaveAction.mov */; };
+		9A68555C252CE74F00C41D9A /* Scan-Flicker.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9A685559252CE74E00C41D9A /* Scan-Flicker.mov */; };
+		9A68555D252CE74F00C41D9A /* Login-Flick.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9A68555A252CE74F00C41D9A /* Login-Flick.mov */; };
 		9A906BBF24CDC644003AF8A4 /* ScannedImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A906BBE24CDC644003AF8A4 /* ScannedImagesViewController.swift */; };
 		9A96AECB24F2C07400A8E620 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96AECA24F2C07400A8E620 /* DataModel.swift */; };
 		9AA6FDC72517C9A9005D017A /* Sacramento-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9AA6FDC62517C9A9005D017A /* Sacramento-Regular.ttf */; };
@@ -30,6 +33,9 @@
 		9A05FE77250BE7F90043360A /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		9A4A724F24FC054200E07D26 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		9A4A725124FD625800E07D26 /* SelectedImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedImageViewController.swift; sourceTree = "<group>"; };
+		9A685558252CE74E00C41D9A /* SaveAction.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = SaveAction.mov; sourceTree = "<group>"; };
+		9A685559252CE74E00C41D9A /* Scan-Flicker.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "Scan-Flicker.mov"; sourceTree = "<group>"; };
+		9A68555A252CE74F00C41D9A /* Login-Flick.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "Login-Flick.mov"; sourceTree = "<group>"; };
 		9A906BBE24CDC644003AF8A4 /* ScannedImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedImagesViewController.swift; sourceTree = "<group>"; };
 		9A96AECA24F2C07400A8E620 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		9AA6FDC62517C9A9005D017A /* Sacramento-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sacramento-Regular.ttf"; sourceTree = "<group>"; };
@@ -78,6 +84,9 @@
 		9ABDB32424CD90D400C41731 = {
 			isa = PBXGroup;
 			children = (
+				9A68555A252CE74F00C41D9A /* Login-Flick.mov */,
+				9A685558252CE74E00C41D9A /* SaveAction.mov */,
+				9A685559252CE74E00C41D9A /* Scan-Flicker.mov */,
 				9ABDB32F24CD90D400C41731 /* Flick */,
 				9ABDB32E24CD90D400C41731 /* Products */,
 				A2A9B4D310A2A5A81475CFBF /* Pods */,
@@ -188,8 +197,11 @@
 			files = (
 				9ABDB34024CD90D800C41731 /* LaunchScreen.storyboard in Resources */,
 				9ABDB34A24CD987000C41731 /* GoogleService-Info.plist in Resources */,
+				9A68555C252CE74F00C41D9A /* Scan-Flicker.mov in Resources */,
 				9ABDB33D24CD90D800C41731 /* Assets.xcassets in Resources */,
+				9A68555B252CE74F00C41D9A /* SaveAction.mov in Resources */,
 				9ABDB33824CD90D400C41731 /* Main.storyboard in Resources */,
+				9A68555D252CE74F00C41D9A /* Login-Flick.mov in Resources */,
 				9AA6FDC72517C9A9005D017A /* Sacramento-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

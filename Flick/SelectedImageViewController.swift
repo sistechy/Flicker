@@ -23,7 +23,7 @@ class SelectedImageViewController: UIViewController {
         selectedImageView.image = DataModel.selectedImage
     }
     @IBAction func saveAction(_ sender: UIBarButtonItem) {
-        save(photo: DataModel.selectedImage, toAlbum: "Flick") { (result, error) in
+        save(photo: DataModel.selectedImage, toAlbum: "Flick-save") { (result, error) in
             print(error)
 //            if let error = error {
 //                // we got back an error!

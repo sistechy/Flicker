@@ -50,7 +50,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="9RI-GG-n4N" kind="show" id="lL4-ze-NHE"/>
+                                            <segue destination="9RI-GG-n4N" kind="push" id="m4d-hx-nOD"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -171,24 +171,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZRH-cx-Grr">
-                                <rect key="frame" x="0.0" y="123" width="414" height="665"/>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Documents" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxD-JU-1Wg">
                                 <rect key="frame" x="0.0" y="20" width="414" height="73"/>
                                 <fontDescription key="fontDescription" name="Sacramento-Regular" family="Sacramento" pointSize="50"/>
                                 <color key="textColor" red="0.036466479420000003" green="0.21901100339999999" blue="0.78416481599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZRH-cx-Grr">
+                                <rect key="frame" x="50" y="123" width="314" height="665"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ZRH-cx-Grr" firstAttribute="top" secondItem="dxD-JU-1Wg" secondAttribute="bottom" constant="30" id="4fK-5X-zOG"/>
-                            <constraint firstItem="ZRH-cx-Grr" firstAttribute="leading" secondItem="U8Q-Zo-H1o" secondAttribute="leading" id="GpI-Zf-fbl"/>
+                            <constraint firstItem="ZRH-cx-Grr" firstAttribute="leading" secondItem="U8Q-Zo-H1o" secondAttribute="leading" constant="50" id="GpI-Zf-fbl"/>
                             <constraint firstItem="dxD-JU-1Wg" firstAttribute="leading" secondItem="U8Q-Zo-H1o" secondAttribute="leading" id="QJp-su-991"/>
                             <constraint firstItem="U8Q-Zo-H1o" firstAttribute="bottom" secondItem="ZRH-cx-Grr" secondAttribute="bottom" constant="20" id="XU6-6k-vrK"/>
                             <constraint firstItem="U8Q-Zo-H1o" firstAttribute="trailing" secondItem="dxD-JU-1Wg" secondAttribute="trailing" id="gps-ud-gUe"/>
-                            <constraint firstItem="U8Q-Zo-H1o" firstAttribute="trailing" secondItem="ZRH-cx-Grr" secondAttribute="trailing" id="osq-20-nRM"/>
+                            <constraint firstItem="U8Q-Zo-H1o" firstAttribute="trailing" secondItem="ZRH-cx-Grr" secondAttribute="trailing" constant="50" id="osq-20-nRM"/>
                             <constraint firstItem="dxD-JU-1Wg" firstAttribute="top" secondItem="U8Q-Zo-H1o" secondAttribute="top" constant="20" id="pM0-CB-ZH2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="U8Q-Zo-H1o"/>
