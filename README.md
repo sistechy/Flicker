@@ -24,3 +24,4 @@ Technical Specifications:
 4. DB: Firebase
 
 
+![](LoginGif.gif, Scangif.gif, ViewScan.gif)
